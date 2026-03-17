@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杨惠东 | Ethan Yang - 个人主页</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f9f7f2; /* 温暖纸感底色 */
+            --text-main: #1a1a1a;
+            --text-secondary: #5a5a5a;
+            --accent-color: #8c7851; /* 柔和的复古调色 */
+            --border-color: #e0ddd7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1, h2, .serif {
+            font-family: 'Noto+Serif+SC', serif;
+            font-weight: 700;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* 导航栏 */
+        nav {
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            margin-left: 30px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.5;
+        }
+
+        /* Hero 区域 - 大字排版 */
+        .hero {
+            padding: 120px 0 80px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1.1;
+            margin-bottom: 40px;
+            letter-spacing: -2px;
+        }
+
+        .hero-meta {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .hero-tagline {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        .hero-intro {
+            font-size: 1.1rem;
+            max-width: 600px;
+        }
+
+        /* 核心板块通用样式 */
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-color);
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        /* 经历板块 - Editorial 风格 */
+        .exp-item {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            margin-bottom: 60px;
+            gap: 40px;
+        }
+
+        .exp-date {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .exp-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .exp-company {
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .exp-desc {
+            list-style: none;
+            color: var(--text-secondary);
+        }
+
+        .exp-desc li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .exp-desc li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--border-color);
+        }
+
+        /* 技能/获奖板块 */
+        .grid-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .grid-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        /* 联系方式 */
+        .footer {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact-email {
+            font-size: clamp(1.5rem, 5vw, 3rem);
+            font-family: 'Noto+Serif+SC', serif;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: color 0.3s;
+        }
+
+        .contact-email:hover {
+            color: var(--accent-color);
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .hero-meta, .exp-item, .grid-list {
+                grid-template-columns: 1fr;
+            }
+            .container { padding: 0 20px; }
+            .hero h1 { font-size: 3.5rem; }
+            .exp-item { gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="logo">ETHAN YANG</div>
+            <div class="nav-links">
+                <a href="#experience">履历</a>
+                <a href="#research">研究</a>
+                <a href="#about">关于</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <h1>杨惠东</h1>
+            <div class="hero-meta">
+                <div class="hero-tagline">
+                    高级体验管理专家<br>
+                    心理学背景 / 译者 / 讲师
+                </div>
+                <div class="hero-intro">
+                    深耕出行、快消、金融行业。从0到1搭建体验研究体系，擅长将复杂的心理学理论转化为可落地的商业洞察与数据驱动的产品方案。 [cite: 5, 7]
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <span class="section-label">Professional Experience</span>
+            
+            <div class="exp-item">
+                <div class="exp-date">2022.11 — 2023.05</div>
+                <div class="exp-content">
+                    <span class="exp-company">度小满金融科技 | 高级商业分析专家</span>
+                    <h3>CEM 体验管理平台建设</h3>
+                    <ul class="exp-desc">
+                        <li>整合多渠道VOC与满意度数据，实现高效体验数据分析闭环 [cite: 12]</li>
+                        <li>产出用户画像，挖掘经营机会并统筹资源优化产品流程 [cite: 13]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-date">2021.09 — 2022.02</div>
+                <div class="exp-content">
+                    <span class="exp-company">京东 (京喜事业群) | 体验运营专家 (团队负责人)</span>
+                    <h3>全景图搭建与体验洞察</h3>
+                    <ul class="exp-desc">
+                        <li>为零售、社区团购、便利店等多业务线搭建体验指标体系 [cite: 19]</li>
+                        <li>建设体验数据看板，实现企业层面的降本提效 [cite: 20]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-date">2018.08 — 2021.09</div>
+                <div class="exp-content">
+                    <span class="exp-company">滴滴出行 | 体验运营专家 (EMC/UDC)</span>
+                    <h3>集团级体验管理与平台化</h3>
+                    <ul class="exp-desc">
+                        <li>兼任产品经理，规划并落地集团体验数据生产工具，人效提升200%+ [cite: 32, 33]</li>
+                        <li>非人力成本降低70%+，一年触达约1亿多用户人次 [cite: 34]</li>
+                        <li>整合VOC并向管理层汇报，推动流程改善与SOP优化 [cite: 28, 30]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-date">2016.10 — 2018.08</div>
+                <div class="exp-content">
+                    <span class="exp-company">尼尔森 (Nielsen) | 高级分析员</span>
+                    <h3>汽车行业消费者洞察</h3>
+                    <ul class="exp-desc">
+                        <li>为奔驰、宝马、奥迪等豪华品牌提供定性/定量研究支撑 [cite: 44]</li>
+                        <li>主持车联网系统、品牌形象及新车上市等核心研究项目 [cite: 46, 47]</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="research">
+            <span class="section-label">Education & Research</span>
+            <div class="grid-list">
+                <div class="grid-item">
+                    <h4>俄亥俄州立大学 (OSU)</h4>
+                    <p>心理学理学学士 (社会心理学方向) [cite: 76]</p>
+                    <p style="color:var(--text-secondary); font-size: 0.9rem; margin-top:5px;">
+                        Magna Cum Laude 荣誉 (Top 10%) [cite: 78]<br>
+                        综合 GPA: 3.71 / 高等课程 GPA: 3.97 [cite: 77]
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <h4>学术研究成果</h4>
+                    <p>完善 ELM 模型：探索态度转变与文化匹配效应 [cite: 71, 72]</p>
+                    <p style="color:var(--text-secondary); font-size: 0.9rem; margin-top:5px;">
+                        独立研究导师为 Dr. Richard Petty；论文答辩位列前5% [cite: 69, 73]
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <span class="section-label">Skills & Awards</span>
+            <div class="grid-list">
+                <div class="grid-item">
+                    <h4>语言与出版</h4>
+                    <p>中信出版社2020年度译者 [cite: 82]</p>
+                    <p>译著：《激素小史》《燃烧吧，能量》 [cite: 82]</p>
+                </div>
+                <div class="grid-item">
+                    <h4>专业荣誉</h4>
+                    <p>滴滴：2021H1风险值改善最佳FT [cite: 83]</p>
+                    <p>今日头条优质心理领域创作者 [cite: 85]</p>
+                </div>
+                <div class="grid-item">
+                    <h4>技术背景</h4>
+                    <p>SPSS 方差/回归分析、Qualtrics、数据建模 [cite: 73]</p>
+                </div>
+                <div class="grid-item">
+                    <h4>个人特质</h4>
+                    <p>自杀干预志愿者 (8个月)、PADI 自由潜水员、航模爱好者 [cite: 85, 86]</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <span class="section-label">Get In Touch</span>
+            <a href="mailto:ethanerudite@163.com" class="contact-email">ethanerudite@163.com</a>
+            <p style="margin-top: 20px; color: var(--text-secondary);">Tel: 185-7035-0321 [cite: 1]</p>
+        </footer>
+    </div>
+
+    <script>
+        // 简单的淡入效果
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = "translateY(20px)";
+            section.style.transition = "all 0.8s ease-out";
+        });
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

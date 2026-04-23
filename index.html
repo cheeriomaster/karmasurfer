@@ -428,7 +428,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 0;
-      background: var(--border);
+      background: var(--bg-main);
       margin-bottom: 48px;
       max-width: 560px;
     }
@@ -670,6 +670,8 @@
       line-height: 1.7;
       font-weight: 400;
     }
+
+
 
     /* ══════════════════════════════
        DETAIL MODAL
@@ -1337,8 +1339,8 @@
         </div>
       </div>
       <div class="book-card book-card-coming">
-        <div class="book-cover" style="background:#2E2E3D;display:flex;align-items:center;justify-content:center;">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#6666AA" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="book-cover" style="background:#3D2A20;display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#C49A7A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
           </svg>
         </div>
@@ -1347,6 +1349,7 @@
           <div class="book-meta book-meta-coming">出版中</div>
         </div>
       </div>
+
     </div>
 
     <div class="honors-label">学习&获奖</div>
@@ -1357,23 +1360,7 @@
       </div>
     </div>
 
-    <div class="learning-images">
-      <div class="learning-img-wrap">
-        <img src="translator_of_year.jpg" alt="中信出版社年度译者奖杯" class="award-img">
-      </div>
-      <div class="learning-img-placeholder">
-        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#aaa" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
-        </svg>
-        <div class="learning-img-hint">上传图片</div>
-      </div>
-      <div class="learning-img-placeholder">
-        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#aaa" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
-        </svg>
-        <div class="learning-img-hint">上传图片</div>
-      </div>
-    </div>
+
   </div>
 </section>
 
@@ -1408,8 +1395,7 @@
       <div class="contact-card" onclick="copyText('禅与宇宙探索艺术', '公众号')">
         <div class="contact-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9"/>
-            <path d="M12 6v6l4 2"/>
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
           </svg>
         </div>
         <div class="contact-label">公众号</div>

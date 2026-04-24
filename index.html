@@ -954,6 +954,27 @@
 
     .work-desc { font-size: 12px; color: var(--text-mid); line-height: 1.9; font-weight: 300; margin-bottom: 0; }
 
+    .work-video-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      color: var(--text-subtle);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 4px 10px 4px 8px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .work-video-link:hover {
+      color: var(--text-primary);
+      border-color: var(--text-mid);
+    }
+    .work-video-link svg { flex-shrink: 0; }
+
     /* 可展开详情 */
     .work-detail {
       max-height: 0;
@@ -1574,6 +1595,10 @@
             <span class="work-company-tag" onclick="toggleWorkDetail(this)">Cariad Technology <span class="tag-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></span>
             <div class="work-title">用户体验研究</div>
             <div class="work-desc">为智能座舱 UX/UI 和产品设计提供决策支持，建设用户体验软硬件能力，聚焦 AI、ADAS/AVM、Design System 相关方向。</div>
+            <a class="work-video-link" href="https://channels.weixin.qq.com/finder-preview/pages/feed?entry_card_type=48&comment_scene=39&appid=51&token=WdF%2BOwgBEAMaIAgEEhwxNzc3MDEwMzM2MzkyNjY0MzM3NG9RUDVJb2xOIhgIAxIUCAMSEIUCD%2BXqb0ds%2F6aIUFvERls%3D&entry_scene=51&eid=export%2FUzFfAgtgekIEAQAAAAAAvXgBEYzLewAAAAstQy6ubaLX4KHWvLEZgBPE0pMYXRAsAYOEzNPgMFkNAbsoYeUEtcPQDztA3YDylChVcIrulg" target="_blank" rel="noopener">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              We Are Developers — 团队介绍视频
+            </a>
           </div>
         </div>
 
